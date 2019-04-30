@@ -1,0 +1,270 @@
+//Status bar for this shitty minecraft-themed doom mod
+
+//I don't know what this is for really but I'm butchering the default hud so I'm not touching it
+monospacefonts true, "0";
+
+statusbar fullscreen
+{
+    //Inventory
+    drawimage "sprites/UI/Itembar.png", 160, 200, centerbottom;
+	
+	//Selection
+	
+	//Selected Fist
+	IsSelected Fist
+	{
+	drawimage "sprites/UI/Selector.png", 80, 201, centerbottom;
+	}
+	
+	//Selected any Sword
+	IsSelected VoxelSwordWood
+	{
+	drawimage "sprites/UI/Selector.png", 100, 201, centerbottom;
+	}
+	IsSelected VoxelSwordStone
+	{
+	drawimage "sprites/UI/Selector.png", 100, 201, centerbottom;
+	}
+	IsSelected VoxelSwordIron
+	{
+	drawimage "sprites/UI/Selector.png", 100, 201, centerbottom;
+	}
+	IsSelected VoxelSwordDiamond
+	{
+	drawimage "sprites/UI/Selector.png", 100, 201, centerbottom;
+	}
+	
+	//Selected Bow
+	IsSelected VoxelBow
+	{
+	drawimage "sprites/UI/Selector.png", 120, 201, centerbottom;
+	}
+	
+	//Draw items
+	
+	//Swords
+	InInventory VoxelSwordWood, 1 
+	{
+	drawimage "models/weapons/Sword_Wood.png", 100, 197, centerbottom;
+	}
+	InInventory VoxelSwordStone, 1 
+	{
+	drawimage "models/weapons/Sword_Stone.png", 100, 197, centerbottom;
+	}
+	InInventory VoxelSwordIron, 1 
+	{
+	drawimage "models/weapons/Sword_Iron.png", 100, 197, centerbottom;
+	}
+	InInventory VoxelSwordDiamond, 1 
+	{
+	drawimage "models/weapons/Sword_Diamond.png", 100, 197, centerbottom;
+	}
+	InInventory TNTAmmo, 1
+	{
+	drawimage "TNTIB0", 200, 197, centerbottom;
+	drawnumber 3, MinecraftFont, untranslated, TNTAmmo, drawshadow, 208, 189;
+	}
+
+	//Bow
+	InInventory VoxelBow, 1 
+	{
+	drawimage "models/weapons/Bow1.png", 120, 197, centerbottom;
+	}
+	InInventory ArrowAmmo, 1
+	{
+	drawimage "ARRWA0", 180, 197, centerbottom;
+	drawnumber 3, MinecraftFont, untranslated, ArrowAmmo, drawshadow, 188, 189;
+	}
+	//Food
+	
+	
+	//Draw Health
+	//This is dumb but for the sake of flexibility I'm defining individual heart containers
+	drawimage "sprites/UI/Heart_Empty.png", 74, 177, centerbottom;
+	drawimage "sprites/UI/Heart_Empty.png", 82, 177, centerbottom;
+	drawimage "sprites/UI/Heart_Empty.png", 90, 177, centerbottom;
+	drawimage "sprites/UI/Heart_Empty.png", 98, 177, centerbottom;
+	drawimage "sprites/UI/Heart_Empty.png", 106, 177, centerbottom;
+	drawimage "sprites/UI/Heart_Empty.png", 114, 177, centerbottom;
+	drawimage "sprites/UI/Heart_Empty.png", 122, 177, centerbottom;
+	drawimage "sprites/UI/Heart_Empty.png", 130, 177, centerbottom;
+	drawimage "sprites/UI/Heart_Empty.png", 138, 177, centerbottom;
+	drawimage "sprites/UI/Heart_Empty.png", 146, 177, centerbottom;
+	
+	//This was hella tedious.  There's probably a better way but I already made it work so meh
+	IfHealth 5
+	{
+		drawimage "sprites/UI/Heart_Half.png", 74, 177, centerbottom;
+	}
+	IfHealth 10
+	{
+		drawimage "sprites/UI/Heart_Full.png", 74, 177, centerbottom;
+	}
+	IfHealth 15
+	{
+		drawimage "sprites/UI/Heart_Half.png", 82, 177, centerbottom;
+	}
+	IfHealth 20
+	{
+		drawimage "sprites/UI/Heart_Full.png", 82, 177, centerbottom;
+	}
+	IfHealth 25
+	{
+		drawimage "sprites/UI/Heart_Half.png", 90, 177, centerbottom;
+	}
+	IfHealth 30
+	{
+		drawimage "sprites/UI/Heart_Full.png", 90, 177, centerbottom;
+	}
+	IfHealth 35
+	{
+		drawimage "sprites/UI/Heart_Half.png", 98, 177, centerbottom;
+	}
+	IfHealth 40
+	{
+		drawimage "sprites/UI/Heart_Full.png", 98, 177, centerbottom;
+	}
+	IfHealth 45
+	{
+		drawimage "sprites/UI/Heart_Half.png", 106, 177, centerbottom;
+	}
+	IfHealth 50
+	{
+		drawimage "sprites/UI/Heart_Full.png", 106, 177, centerbottom;
+	}
+	IfHealth 55
+	{
+		drawimage "sprites/UI/Heart_Half.png", 114, 177, centerbottom;
+	}
+	IfHealth 60
+	{
+		drawimage "sprites/UI/Heart_Full.png", 114, 177, centerbottom;
+	}
+	IfHealth 65
+	{
+		drawimage "sprites/UI/Heart_Half.png", 122, 177, centerbottom;
+	}
+	IfHealth 70
+	{
+		drawimage "sprites/UI/Heart_Full.png", 122, 177, centerbottom;
+	}
+	IfHealth 75
+	{
+		drawimage "sprites/UI/Heart_Half.png", 130, 177, centerbottom;
+	}
+	IfHealth 80
+	{
+		drawimage "sprites/UI/Heart_Full.png", 130, 177, centerbottom;
+	}
+	IfHealth 85
+	{
+		drawimage "sprites/UI/Heart_Half.png", 138, 177, centerbottom;
+	}
+	IfHealth 90
+	{
+		drawimage "sprites/UI/Heart_Full.png", 138, 177, centerbottom;
+	}
+	IfHealth 95
+	{
+		drawimage "sprites/UI/Heart_Half.png", 146, 177, centerbottom;
+	}
+	IfHealth 100
+	{
+		drawimage "sprites/UI/Heart_Full.png", 146, 177, centerbottom;
+	}
+	
+	//Draw Hunger
+	//Copy pasta with new offsets
+	drawimage "sprites/UI/Hunger_Empty.png", 174, 177, centerbottom;
+	drawimage "sprites/UI/Hunger_Empty.png", 182, 177, centerbottom;
+	drawimage "sprites/UI/Hunger_Empty.png", 190, 177, centerbottom;
+	drawimage "sprites/UI/Hunger_Empty.png", 198, 177, centerbottom;
+	drawimage "sprites/UI/Hunger_Empty.png", 206, 177, centerbottom;
+	drawimage "sprites/UI/Hunger_Empty.png", 214, 177, centerbottom;
+	drawimage "sprites/UI/Hunger_Empty.png", 222, 177, centerbottom;
+	drawimage "sprites/UI/Hunger_Empty.png", 230, 177, centerbottom;
+	drawimage "sprites/UI/Hunger_Empty.png", 238, 177, centerbottom;
+	drawimage "sprites/UI/Hunger_Empty.png", 246, 177, centerbottom;
+		
+	//Find and replace is dope as shit
+	InInventory HungerItem, 5
+	{
+		drawimage "sprites/UI/Hunger_Half.png", 246, 177, centerbottom;
+	}
+	InInventory HungerItem, 10
+	{
+		drawimage "sprites/UI/Hunger_Full.png", 246, 177, centerbottom;
+	}
+	InInventory HungerItem, 15
+	{
+		drawimage "sprites/UI/Hunger_Half.png", 238, 177, centerbottom;
+	}
+	InInventory HungerItem, 20
+	{
+		drawimage "sprites/UI/Hunger_Full.png", 238, 177, centerbottom;
+	}
+	InInventory HungerItem, 25
+	{
+		drawimage "sprites/UI/Hunger_Half.png", 230, 177, centerbottom;
+	}
+	InInventory HungerItem, 30
+	{
+		drawimage "sprites/UI/Hunger_Full.png", 230, 177, centerbottom;
+	}
+	InInventory HungerItem, 35
+	{
+		drawimage "sprites/UI/Hunger_Half.png", 222, 177, centerbottom;
+	}
+	InInventory HungerItem, 40
+	{
+		drawimage "sprites/UI/Hunger_Full.png", 222, 177, centerbottom;
+	}
+	InInventory HungerItem, 45
+	{
+		drawimage "sprites/UI/Hunger_Half.png", 214, 177, centerbottom;
+	}
+	InInventory HungerItem, 50
+	{
+		drawimage "sprites/UI/Hunger_Full.png", 214, 177, centerbottom;
+	}
+	InInventory HungerItem, 55
+	{
+		drawimage "sprites/UI/Hunger_Half.png", 206, 177, centerbottom;
+	}
+	InInventory HungerItem, 60
+	{
+		drawimage "sprites/UI/Hunger_Full.png", 206, 177, centerbottom;
+	}
+	InInventory HungerItem, 65
+	{
+		drawimage "sprites/UI/Hunger_Half.png", 198, 177, centerbottom;
+	}
+	InInventory HungerItem, 70
+	{
+		drawimage "sprites/UI/Hunger_Full.png", 198, 177, centerbottom;
+	}
+	InInventory HungerItem, 75
+	{
+		drawimage "sprites/UI/Hunger_Half.png", 190, 177, centerbottom;
+	}
+	InInventory HungerItem, 80
+	{
+		drawimage "sprites/UI/Hunger_Full.png", 190, 177, centerbottom;
+	}
+	InInventory HungerItem, 85
+	{
+		drawimage "sprites/UI/Hunger_Half.png", 182, 177, centerbottom;
+	}
+	InInventory HungerItem, 90
+	{
+		drawimage "sprites/UI/Hunger_Full.png", 182, 177, centerbottom;
+	}
+	InInventory HungerItem, 95
+	{
+		drawimage "sprites/UI/Hunger_Half.png", 174, 177, centerbottom;
+	}
+	InInventory HungerItem, 100
+	{
+		drawimage "sprites/UI/Hunger_Full.png", 174, 177, centerbottom;
+	}
+}

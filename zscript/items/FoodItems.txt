@@ -1,0 +1,20 @@
+Class FoodItem : CustomInventory
+{
+	
+}
+
+Class HungerItem : Ammo
+{
+	Default
+	{
+	Inventory.Amount 5;
+	Inventory.MaxAmount 100;
+	}
+	States
+	{
+	Spawn:
+		//You should never see this
+		POSS A -1;
+		stop;
+	}
+}

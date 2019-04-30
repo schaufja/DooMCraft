@@ -1,0 +1,174 @@
+class TNTAmmo : Ammo replaces Rocket
+{
+	Default
+	{
+	Inventory.PickupMessage "Found an entire cubic meter of TNT!?!";
+	Inventory.Amount 1;
+	Inventory.MaxAmount 64;
+	Ammo.BackpackAmount 3;
+	Ammo.BackpackMaxAmount 64;
+	Scale 1;
+	Radius 8;
+	Height 16;
+	}
+	States
+	{
+	Spawn:
+		FRAM A -1;
+		stop;
+	}
+}
+
+class VoxelSword : Weapon
+{
+	Default
+	{
+	Weapon.AmmoUse2 1;
+	Weapon.AmmoType2 "TNTAmmo";
+	Weapon.SlotNumber 2;
+	DamageType "PlayerSword";
+	Scale 5;
+	+WEAPON.NOALERT
+	+WEAPON.NOAUTOAIM
+	+WEAPON.ALT_AMMO_OPTIONAL
+	}
+	States
+	{
+	Spawn:
+		FRAM A 1;
+		Loop;
+	Ready:
+		FRAM A 1 A_WeaponReady;
+		Loop;
+	Deselect:
+		FRAM A 1 A_Lower;
+		Loop;
+	Select:
+		FRAM A 1 A_Raise;
+		Loop;
+	Fire:
+		FRAM A 0 A_JumpIfCloser(60, "Hit");
+		FRAM A 0 A_Jump(256, "Swing1", "Swing2", "Swing3");
+	Swing1:
+		FRAM BC 5;
+		Goto Ready;
+	Swing2:
+		FRAM DE 5;
+		Goto Ready;
+	Hit:
+		FRAM A 1;
+		SWEP AB 1;
+		SWEP C 1
+		{
+			A_Explode((15), 64, XF_NOTMISSILE, 0, 0, 0, 0, "None", "PlayerSword");
+			A_PlaySound("sounds/swordhit");
+			A_RadiusThrust(2000, 64, RTF_NOIMPACTDAMAGE|RTF_NOTMISSILE);
+			A_FireBullets(65, 0, 15, 0, "Empty");
+		}
+		SWEP DEFGH 1;
+		Goto Ready;
+	AltFire:
+		TNTB A 4 A_JumpIfNoAmmo("Fire");
+		TNTB A 0 A_ReFire;
+		TNTB A 2 A_SpawnItemEx("TNTBlock", 20, 0, 4, 0, 0, 0, 0);
+		TNTB A 0 A_FireBullets(0, 0, -1, 0, "Empty");
+		TNTB A 2;
+		Goto Ready;
+	AltHold:
+		TNTB A 2 A_JumpIfNoAmmo("Fire");
+		TNTB A 2 A_ReFire;
+		TNTB A 2 A_SpawnItemEx("VoxelSkull", 20, 0, 4, 10, 0, 5, 0);
+		TNTB A 0 A_FireBullets(0, 0, -1, 0, "Empty");
+		TNTB A 2;
+		Goto Ready;
+	}
+}
+
+class VoxelSwordWood : VoxelSword
+{
+	States
+	{
+	Hit:
+		FRAM A 1;
+		SWEP AB 1;
+		SWEP C 1
+		{
+			A_Explode((15), 64, XF_NOTMISSILE, 0, 0, 0, 0, "None", "PlayerSword");
+			A_PlaySound("sounds/swordhit");
+			A_RadiusThrust(2000, 64, RTF_NOIMPACTDAMAGE|RTF_NOTMISSILE);
+			A_FireBullets(65, 0, 15, 0, "Empty");
+		}
+		SWEP DEFGH 1;
+		Goto Super::Ready;
+	}
+}
+
+class VoxelSwordStone : VoxelSword
+{
+	
+	States
+	{
+	Hit:
+		FRAM A 1;
+		SWEP AB 1;
+		SWEP C 1
+		{
+			A_Explode((20), 64, XF_NOTMISSILE, 0, 0, 0, 0, "None", "PlayerSword");
+			A_PlaySound("sounds/swordhit");
+			A_RadiusThrust(2000, 64, RTF_NOIMPACTDAMAGE|RTF_NOTMISSILE);
+			A_FireBullets(65, 0, 15, 0, "Empty");
+		}
+		SWEP DEFGH 1;
+		Goto Super::Ready;
+	}
+}
+
+class VoxelSwordIron : VoxelSword
+{
+	
+	States
+	{
+	Hit:
+		FRAM A 1;
+		SWEP AB 1;
+		SWEP C 1
+		{
+			A_Explode((25), 64, XF_NOTMISSILE, 0, 0, 0, 0, "None", "PlayerSword");
+			A_PlaySound("sounds/swordhit");
+			A_RadiusThrust(2000, 64, RTF_NOIMPACTDAMAGE|RTF_NOTMISSILE);
+			A_FireBullets(65, 0, 15, 0, "Empty");
+		}
+		SWEP DEFGH 1;
+		Goto Super::Ready;
+	}
+}
+
+class VoxelSwordDiamond : VoxelSword
+{
+	
+	States
+	{
+	Hit:
+		FRAM A 1;
+		SWEP AB 1;
+		SWEP C 1
+		{
+			A_Explode((40), 64, XF_NOTMISSILE, 0, 0, 0, 0, "None", "PlayerSword");
+			A_PlaySound("sounds/swordhit");
+			A_RadiusThrust(2000, 64, RTF_NOIMPACTDAMAGE|RTF_NOTMISSILE);
+			A_FireBullets(65, 0, 15, 0, "Empty");
+		}
+		SWEP DEFGH 1;
+		Goto Super::Ready;
+	}
+}
+
+class Empty : Actor
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		Stop;
+	}
+}

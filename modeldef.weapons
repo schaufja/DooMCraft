@@ -1,0 +1,192 @@
+/////////////////////////
+/////////Weapons/////////
+/////////////////////////
+
+//VoxelBow
+Model VoxelBow
+{
+	Path "models/weapons"
+	Model 0 "Bow1.md3"
+	Skin 0 "Bow1.png"
+	Offset 6 -11 -2
+	PitchOffset -15.0
+	Scale 0.35 0.35 0.35
+	
+	FrameIndex FRAM A 0 0
+}
+
+Model VoxelBow
+{
+	Path "models/weapons"
+	Model 0 "Bow2.md3"
+	Skin 0 "Bow2.png"
+	Offset 6 -11 -2
+	PitchOffset -45.0
+	Scale 0.4 0.4 0.4
+	
+	FrameIndex FRAM B 0 0
+}
+
+Model VoxelBow
+{
+	Path "models/weapons"
+	Model 0 "Bow3.md3"
+	Skin 0 "Bow3.png"
+	Offset 6 -11 -2
+	PitchOffset -45.0
+	Scale 0.4 0.4 0.4
+	
+	FrameIndex FRAM C 0 0
+}
+
+Model VoxelBow
+{
+	Path "models/weapons"
+	Model 0 "Bow4.md3"
+	Skin 0 "Bow3.png"
+	Offset 6 -11 -2
+	PitchOffset -45.0
+	Scale 0.4 0.4 0.4
+	
+	FrameIndex FRAM D 0 0
+}
+
+Model VoxelArrow
+{
+	Path "models/weapons"
+	Model 0 "Arrow.md3"
+	Skin 0 "Arrow.png"
+	Offset 0 0 5
+	PitchOffset 0
+	Scale 0.4 0.4 0.4
+	USEACTORPITCH
+	USEACTORROLL
+	
+	FrameIndex FRAM A 0 0
+}
+
+Model VoxelSeekerArrow
+{
+	Path "models/weapons"
+	Model 0 "Arrow.md3"
+	Skin 0 "Arrow.png"
+	Offset 0 0 0
+	PitchOffset 0
+	Scale 0.4 0.4 0.4
+	USEACTORPITCH
+	USEACTORROLL
+	
+	FrameIndex FRAM A 0 0
+}
+
+Model VoxelArrowStuck
+{
+	Path "models/weapons"
+	Model 0 "Arrow.md3"
+	Skin 0 "Arrow.png"
+	Offset 0 0 0
+	PitchOffset 180
+	Scale 0.4 0.4 0.4
+	USEACTORPITCH
+	USEACTORROLL
+	
+	FrameIndex FRAM A 0 0
+}
+
+//TNTBlock
+Model TNTBlock
+{
+	Path "models/weapons"
+	Model 0 "TNTBlock.md3"
+	Skin 0 "TNTBlock.png"
+	
+	FrameIndex FRAM A 0 0
+}
+
+Model TNTBlock
+{
+	Path "models/weapons"
+	Model 0 "TNTBlock.md3"
+	Skin 0 "TNTFlash.png"
+	
+	FrameIndex FRAM B 0 0
+}
+
+//TNTBlock World
+Model TNTAmmo
+{
+	Path "models/weapons"
+	Model 0 "TNTBlock.md3"
+	Skin 0 "TNTBlock.png"
+	Scale 0.4 0.4 0.4
+	ROTATING
+	Rotation-Speed 1
+	
+	FrameIndex FRAM A 0 0
+}
+
+//Wood Sword
+Model VoxelSwordWood
+{
+	Path "models/weapons"
+	Model 0 "Sword.md3"
+	Skin 0 "Sword_Wood.png"
+	Offset 0 0 0
+	Scale -0.8 0.8 0.8
+	
+	FrameIndex FRAM A 0 0
+	FrameIndex FRAM B 0 1
+	FrameIndex FRAM C 0 2
+	FrameIndex FRAM D 0 3
+	FrameIndex FRAM E 0 4
+	FrameIndex FRAM F 0 5
+	FrameIndex FRAM G 0 6
+}
+Model VoxelSwordStone
+{
+	Path "models/weapons"
+	Model 0 "Sword.md3"
+	Skin 0 "Sword_Stone.png"
+	Offset 0 0 0
+	Scale -0.8 0.8 0.8
+	
+	FrameIndex FRAM A 0 0
+	FrameIndex FRAM B 0 1
+	FrameIndex FRAM C 0 2
+	FrameIndex FRAM D 0 3
+	FrameIndex FRAM E 0 4
+	FrameIndex FRAM F 0 5
+	FrameIndex FRAM G 0 6
+}
+Model VoxelSwordIron
+{
+	Path "models/weapons"
+	Model 0 "Sword.md3"
+	Skin 0 "Sword_Iron.png"
+	Offset 0 0 0
+	Scale -0.8 0.8 0.8
+	
+	FrameIndex FRAM A 0 0
+	FrameIndex FRAM B 0 1
+	FrameIndex FRAM C 0 2
+	FrameIndex FRAM D 0 3
+	FrameIndex FRAM E 0 4
+	FrameIndex FRAM F 0 5
+	FrameIndex FRAM G 0 6
+}
+Model VoxelSwordDiamond
+{
+	Path "models/weapons"
+	Model 0 "Sword.md3"
+	Skin 0 "Sword_Diamond.png"
+	Offset 0 0 0
+	Scale -0.8 0.8 0.8
+	
+	FrameIndex FRAM A 0 0
+	FrameIndex FRAM B 0 1
+	FrameIndex FRAM C 0 2
+	FrameIndex FRAM D 0 3
+	FrameIndex FRAM E 0 4
+	FrameIndex FRAM F 0 5
+	FrameIndex FRAM G 0 6
+}

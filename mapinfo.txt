@@ -1,0 +1,9 @@
+gameinfo
+{
+	playerclasses = "DooMCraftPlayer"
+}
+
+map MAP01 lookup ""
+{
+	sky1 = "BlueSky", 0
+}

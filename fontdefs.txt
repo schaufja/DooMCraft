@@ -1,0 +1,17 @@
+MinecraftFont
+   {
+       0 SMLNUM0
+       1 SMLNUM1
+       2 SMLNUM2
+       3 SMLNUM3
+       4 SMLNUM4
+       5 SMLNUM5
+       6 SMLNUM6
+       7 SMLNUM7
+       8 SMLNUM8
+       9 SMLNUM9
+       % SMLPRCNT
+       / SMLSLASH
+       - SMLMINUS    
+       NOTRANSLATION 109	// don't touch the shadow color!
+   }

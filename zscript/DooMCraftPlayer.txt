@@ -1,0 +1,22 @@
+Actor DooMCraftPlayer : PlayerPawn
+{
+	Speed 1
+	Health 100
+	Radius 7
+	Height 30
+	Mass 100
+	PainChance 255
+	Player.ViewHeight 24
+	Player.ViewBob 0
+	Player.DisplayName "Marine"
+	Player.StartItem "VoxelBow"
+	Player.StartItem "ArrowAmmo" 12
+	Player.StartItem "Fist"
+	Player.ForwardMove 0.3 0.3
+	Player.SideMove 0.3 0.3
+	Player.JumpZ 6
+	MaxStepHeight 9
+	
+	Player.WeaponSlot 1, Fist
+	Player.WeaponSlot 3, VoxelBow
+}

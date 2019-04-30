@@ -1,0 +1,27 @@
+$random sounds/skeleton/clack
+{
+	sounds/skeleton/step1
+	sounds/skeleton/step2
+	sounds/skeleton/step3
+	sounds/skeleton/step4
+}
+
+sounds/skeleton/step1		sounds/mob/skeleton/step1.ogg
+sounds/skeleton/step2		sounds/mob/skeleton/step2.ogg
+sounds/skeleton/step3		sounds/mob/skeleton/step3.ogg
+sounds/skeleton/step4		sounds/mob/skeleton/step4.ogg
+
+$random sounds/skeleton/hurt
+{
+	sounds/skeleton/hurt1
+	sounds/skeleton/hurt2
+	sounds/skeleton/hurt3
+	sounds/skeleton/hurt4
+}
+
+sounds/skeleton/hurt1		sounds/mob/skeleton/hurt1.ogg
+sounds/skeleton/hurt2		sounds/mob/skeleton/hurt2.ogg
+sounds/skeleton/hurt3		sounds/mob/skeleton/hurt3.ogg
+sounds/skeleton/hurt4		sounds/mob/skeleton/hurt4.ogg
+
+sounds/skeleton/death		sounds/mob/skeleton/death.ogg

@@ -1,0 +1,6 @@
+sprite TNTIB0, 32, 32
+{
+	xscale 2
+	yscale 2
+	patch TNTIA0, 0, 0
+}

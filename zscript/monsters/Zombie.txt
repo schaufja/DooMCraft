@@ -1,0 +1,131 @@
+class Voxel_Zombie : Actor replaces ZombieMan
+{
+	int groanTimer;
+	Default
+	{
+	Health 100;
+	Radius 7;
+	Height 30;
+	Mass 100;
+	Speed 5;
+	PainChance "PlayerSword", 255;
+	DamageFactor "PlayerSword", 1;
+	PainChance "PlayerArrow", 255;
+	DamageFactor "PlayerArrow", 1;
+	PainChance "Extreme", 255;
+	DamageFactor "Extreme", 1;
+	MaxStepHeight 9;
+	MeleeRange 11;
+	Monster;
+	+INTERPOLATEANGLES
+	}
+	States
+	{
+	Spawn:
+		FRAM A 0;
+		FRAM A 3 A_LookEx(0,0,128,128,120,"See");
+		FRAM A 3 A_Jump(64,"Turn");
+		FRAM A 3 A_Jump(64,"Wander");
+		Loop;
+	Wander:
+		FRAM ABCBADED 3
+		{
+			//Have a sight distance of only 96 units
+			A_LookEx(0,0,128,128,120,"See");
+			A_Wander();
+			
+			//Let out a periodic groan sound effect
+			if (groanTimer > 0)
+			{
+				groanTimer--;
+			}
+			else
+			{
+				A_PlaySound("sounds/zombie/groan");
+				groanTimer = random(30,50);
+			}
+			return null;
+		}
+		FRAM A 0 A_Jump(96,"Wander");
+		Goto Spawn;
+	Turn:
+		FRAM A 3 A_LookEx(0,0,128,128,120,"See");
+		FRAM A 3 A_SetAngle(random(-90.0,90.0),SPF_INTERPOLATE);
+		Goto Spawn;
+	See:
+		FRAM ABCBADED 3 
+		{
+			A_Chase();
+			A_LookEx(0,128,0,128,120,"Wander");
+			
+			//Let out a periodic groan sound effect
+			if (groanTimer > 0)
+			{
+				groanTimer--;
+			}
+			else
+			{
+				A_PlaySound("sounds/zombie/groan");
+				groanTimer = random(10,20);
+			}
+			return null;
+		}
+		Loop;
+	Melee:
+		FRAM FFF 4 A_FaceTarget;
+		FRAM G 4 A_CustomMeleeAttack((15));
+		FRAM A 4;
+		Goto See;
+	Pain.PlayerSword:
+	Pain.PlayerArrow:
+	Pain.Extreme:
+		FRAM AA 0 A_SpawnItemEx("BloodDrop", random(-4,4), random(-2,2), random(8,24), random(-2,2), random(-2,2), 4);
+		FRAM Z 8 A_PlaySound("sounds/zombie/hurt");
+		Goto See;
+	Death.PlayerArrow:
+	Death.Extreme:
+	Death.PlayerSword:
+		FRAM AA 0 A_SpawnItemEx("BloodDrop", random(-4,4), random(-2,2), random(8,24), random(-2,2), random(-2,2), 4);
+		FRAM H 3 A_PlaySound("sounds/zombie/death");
+		FRAM H 0 A_NoBlocking;
+		FRAM H 0 A_Jump(32,"LoseArms"); //Arms fly off
+		FRAM H 0 A_Jump(16,"LoseHead"); //Head flies off and blood spurts
+		FRAM IJK 4; //Regular death
+		FRAM LM 2;
+		FRAM M -1;
+	NormalFade:
+		FRAM MMMMMMMMMM 60;
+		FRAM MMMMMMMMMM 1 A_FadeOut(0.1);
+		Stop;
+	LoseArms:
+		FRAM N 3 A_SpawnItemEx("Voxel_Zombie_Arm_Left", 0, -4, 22, -1, -2, 2);
+		FRAM N 3 A_SpawnItemEx("Voxel_Zombie_Arm_Right", 0, 4, 22, -1, 2, 2);
+		FRAM OP 4;
+		FRAM QR 2;
+		FRAM R -1;
+	ArmFade:
+		FRAM RRRRRRRRRR 60;
+		FRAM RRRRRRRRRR 1 A_FadeOut(0.1);
+		Stop;
+	LoseHead:
+		FRAM S 3 A_SpawnItemEx("Voxel_Zombie_Head", 0, 0, 24, -4, random(-1,1), 2);
+		FRAM SSSSSSSS 2 
+		{
+			A_SpawnItemEx("BloodDrop", 0, 0, 20, random(-1,1), random(-1,1), 3);
+			A_PlaySound("sounds/zombie/hurt");
+		}
+		FRAM SSSSSS 2;
+		FRAM SSSSSS 2 
+		{
+			A_SpawnItemEx("BloodDrop", 0, 0, 20, random(-1,1), random(-1,1), 3);
+			A_PlaySound("sounds/zombie/hurt");
+		}
+		FRAM TU 4;
+		FRAM VW 2;
+		FRAM W -1;
+	HeadFade:
+		FRAM WWWWWWWWWW 60;
+		FRAM WWWWWWWWWW 1 A_FadeOut(0.1);
+		Stop;
+	}
+}

@@ -1,0 +1,167 @@
+class ArrowAmmo : Ammo replaces Clip
+{
+	Default
+	{
+	Inventory.PickupMessage "Found an Arrow";
+	Inventory.Amount 1;
+	Inventory.MaxAmount 64;
+	Ammo.BackpackAmount 3;
+	Ammo.BackpackMaxAmount 128;
+	Scale 0.8;
+	Radius 8;
+	Height 16;
+	+Floatbob
+	}
+	States
+	{
+	Spawn:
+		ARRW A -1;
+		stop;
+	}
+}
+
+class VoxelBow : Weapon
+{
+	Default
+	{
+	Weapon.AmmoUse 1;
+	Weapon.AmmoUse2 3;
+	Weapon.AmmoGive 20;
+	Weapon.AmmoType "ArrowAmmo";
+	Weapon.AmmoType2 "ArrowAmmo";
+	+WEAPON.NOALERT
+	+WEAPON.NOAUTOAIM
+	}
+	States
+	{
+	Ready:
+		FRAM A 1 A_WeaponReady;
+		FRAM A 0 A_ZoomFactor(1);
+		Loop;
+	Deselect:
+		FRAM A 1 A_Lower;
+		Loop;
+	Select:
+		FRAM A 1 A_Raise;
+		Loop;
+	Fire:
+		FRAM B 2;
+		FRAM C 3;
+		FRAM D 4;
+		FRAM A 0 A_PlaySound("sounds/bow",1);
+		FRAM A 1 A_FireProjectile("VoxelArrow",Random(-2,2),1,1,0,0,Random(-2,2));
+		FRAM A 3;
+		Goto Ready;
+	AltFire:
+		FRAM B 1 A_ZoomFactor(1.01);
+		FRAM B 1 A_ZoomFactor(1.02);
+		FRAM B 1 A_ZoomFactor(1.03);
+		FRAM B 1 A_ZoomFactor(1.04);
+		FRAM C 1 A_ZoomFactor(1.05);
+		FRAM C 1 A_ZoomFactor(1.06);
+		FRAM C 1 A_ZoomFactor(1.07);
+		FRAM C 1 A_ZoomFactor(1.08);
+		FRAM D 4 A_ReFire;
+		Goto Ready;
+	AltHold:
+		FRAM D 3;
+		FRAM D 3;
+		FRAM D 3;
+		FRAM D 3 A_ReFire;
+		FRAM A 0 A_PlaySound("sounds/bow",1);
+		FRAM A 1 A_FireProjectile("VoxelSeekerArrow",0,1,1,8,0);
+		FRAM A 1 A_ZoomFactor(1);
+		Goto Ready;
+	}
+}
+
+class VoxelArrow : Actor
+{
+	Default
+	{
+	Radius 2;
+	Height 2;
+	Speed 25;
+	Damage (15);
+	Projectile;
+	Gravity 0.25;
+	DamageType "PlayerArrow";
+	-NOGRAVITY
+	+EXPLODEONWATER
+	+FLATSPRITE
+	}
+	States
+	{
+	Spawn:
+		FRAM A 1 NoDelay A_FaceTarget(0,0,0,0,0,8);
+	Fly:
+		FRAM A 1;
+		Loop;
+	Death:
+		FRAM A 0 A_PlaySound("sounds/arrowhit",0);
+		//FRAM A 1 A_SpawnItemEx("ArrowAmmo",0,0,0,0,0,0,0,0,224);
+		FRAM A 1 A_SpawnItemEx("VoxelArrowStuck", 0, 0, 2, 0, 0, 0, 0, SXF_TRANSFERPITCH|SXF_NOCHECKPOSITION);
+	XDeath:
+		FRAM A 0 A_PlaySound("sounds/arrowhit",0);
+		Stop;
+	}
+}
+
+class VoxelArrowStuck : SwitchingDecoration
+{
+	Default
+	{
+	Radius 3;
+	Height 6;
+	Activation THINGSPEC_Activate;
+	-SOLID
+	+NOGRAVITY
+	+FLATSPRITE
+	+USESPECIAL
+	}
+	States
+	{
+	Spawn:
+		FRAM A 1;
+		Loop;
+	Active:
+		FRAM A 1 A_SpawnItemEx("ArrowAmmo",0,0,0,0,0,0,0,0,160);
+		Stop;
+	}
+}
+
+class VoxelSeekerArrow : VoxelArrow
+{
+	Default
+	{
+	Damage (45);
+	Gravity 0.125;
+	+Ripper
+	+FLATSPRITE
+	}
+	States
+	{
+	Spawn:
+		FRAM A 0 NoDelay A_FaceTarget(0,0,0,0,0,8);
+	Fly:
+		FRAM A 1 A_SpawnItemEx("ArrowTrail");
+		Loop;
+	}
+}
+
+class ArrowTrail : Actor
+{
+	Default
+	{
+	RenderStyle "Add";
+	Alpha 0.7;
+	Translation "LightRed";
+	+NOGRAVITY
+	}
+	States
+	{
+	Spawn:
+		TRAL A 15;
+		Stop;
+	}
+}

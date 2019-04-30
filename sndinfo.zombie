@@ -1,0 +1,21 @@
+$random sounds/zombie/groan
+{
+	sounds/zombie/say1
+	sounds/zombie/say2
+	sounds/zombie/say3
+}
+
+sounds/zombie/say1		sounds/mob/zombie/say1.ogg
+sounds/zombie/say2		sounds/mob/zombie/say2.ogg
+sounds/zombie/say3		sounds/mob/zombie/say3.ogg
+
+$random sounds/zombie/hurt
+{
+	sounds/zombie/hurt1
+	sounds/zombie/hurt2
+}
+
+sounds/zombie/hurt1		sounds/mob/zombie/hurt1.ogg
+sounds/zombie/hurt2		sounds/mob/zombie/hurt2.ogg
+
+sounds/zombie/death		sounds/mob/zombie/death.ogg

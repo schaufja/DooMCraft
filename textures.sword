@@ -1,0 +1,56 @@
+sprite SWEPA0, 320, 250
+{
+	xscale 0.069
+	yscale 0.069
+	offset 5, -2
+	patch SWEPA0, 0, 0
+}
+sprite SWEPB0, 320, 250
+{
+	xscale 0.069
+	yscale 0.069
+	offset 5, -2
+	patch SWEPB0, 0, 0
+}
+sprite SWEPC0, 320, 250
+{
+	xscale 0.069
+	yscale 0.069
+	offset 5, -2
+	patch SWEPC0, 0, 0
+}
+sprite SWEPD0, 320, 250
+{
+	xscale 0.069
+	yscale 0.069
+	offset 5, -2
+	patch SWEPD0, 0, 0
+}
+sprite SWEPE0, 320, 250
+{
+	xscale 0.069
+	yscale 0.069
+	offset 5, -2
+	patch SWEPE0, 0, 0
+}
+sprite SWEPF0, 320, 250
+{
+	xscale 0.069
+	yscale 0.069
+	offset 5, -2
+	patch SWEPF0, 0, 0
+}
+sprite SWEPG0, 320, 250
+{
+	xscale 0.069
+	yscale 0.069
+	offset 5, -2
+	patch SWEPG0, 0, 0
+}
+sprite SWEPH0, 320, 250
+{
+	xscale 0.069
+	yscale 0.069
+	offset 5, -2
+	patch SWEPH0, 0, 0
+}

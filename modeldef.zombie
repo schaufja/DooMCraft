@@ -1,0 +1,104 @@
+Model Voxel_Zombie
+{
+	Path "models/monsters"
+	Model 0 "Zombie.md3"
+	Skin 0 "Zombie.png"
+	
+	FrameIndex FRAM A 0 0
+	FrameIndex FRAM B 0 1
+	FrameIndex FRAM C 0 2
+	FrameIndex FRAM D 0 3
+	FrameIndex FRAM E 0 4
+	FrameIndex FRAM F 0 5
+	FrameIndex FRAM G 0 6
+	FrameIndex FRAM H 0 7
+	//Death
+	FrameIndex FRAM I 0 8
+	FrameIndex FRAM J 0 9
+	FrameIndex FRAM K 0 10
+	FrameIndex FRAM L 0 11
+	FrameIndex FRAM M 0 12
+}
+
+//Armless
+Model Voxel_Zombie
+{
+	Path "models/monsters"
+	Model 0 "Zombie.md3"
+	Skin 0 "Zombie_Armless.png"
+	
+	FrameIndex FRAM N 0 8
+	FrameIndex FRAM O 0 9
+	FrameIndex FRAM P 0 10
+	FrameIndex FRAM Q 0 11
+	FrameIndex FRAM R 0 12
+}
+
+//Headless
+Model Voxel_Zombie
+{
+	Path "models/monsters"
+	Model 0 "Zombie.md3"
+	Skin 0 "Zombie_Headless.png"
+	
+	FrameIndex FRAM S 0 8
+	FrameIndex FRAM T 0 9
+	FrameIndex FRAM U 0 10
+	FrameIndex FRAM V 0 11
+	FrameIndex FRAM W 0 12
+}
+
+Model Voxel_Zombie_Head
+{
+	Path "models/monsters"
+	Model 0 "Zombie_Head.md3"
+	Skin 0 "Zombie.png"
+	
+	FrameIndex FRAM A 0 0
+	FrameIndex FRAM B 0 1
+	FrameIndex FRAM C 0 2
+	FrameIndex FRAM D 0 3
+	FrameIndex FRAM E 0 4
+	FrameIndex FRAM F 0 5
+}
+
+Model Voxel_Zombie_Arm_Left
+{
+	Path "models/monsters"
+	Model 0 "Zombie_Arm.md3"
+	Skin 0 "Zombie.png"
+	
+	FrameIndex FRAM A 0 0
+	FrameIndex FRAM B 0 1
+	FrameIndex FRAM C 0 2
+	FrameIndex FRAM D 0 3
+	FrameIndex FRAM E 0 4
+	FrameIndex FRAM F 0 5
+}
+
+Model Voxel_Zombie_Arm_Right
+{
+	Path "models/monsters"
+	Model 0 "Zombie_Arm.md3"
+	Skin 0 "Zombie.png"
+	Scale 1 -1 1
+	
+	FrameIndex FRAM A 0 0
+	FrameIndex FRAM B 0 1
+	FrameIndex FRAM C 0 2
+	FrameIndex FRAM D 0 3
+	FrameIndex FRAM E 0 4
+	FrameIndex FRAM F 0 5
+}
+
+
+
+//Hurt flash
+Model Voxel_Zombie
+{
+	Path "models/monsters"
+	Model 0 "Zombie.md3"
+	Skin 0 "Zombie_Hurt.png"
+	
+	FrameIndex FRAM Z 0 0
+}

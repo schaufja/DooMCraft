@@ -1,0 +1,31 @@
+sounds/bow 		sounds/random/bow.ogg
+
+$random sounds/arrowhit
+{
+	sounds/arrowhit1
+	sounds/arrowhit2
+	sounds/arrowhit3
+	sounds/arrowhit4
+}
+sounds/arrowhit1	sounds/random/bowhit1.ogg
+sounds/arrowhit2	sounds/random/bowhit2.ogg
+sounds/arrowhit3	sounds/random/bowhit3.ogg
+sounds/arrowhit4	sounds/random/bowhit4.ogg
+
+$random sounds/swordhit
+{
+	sounds/swordhit1
+	sounds/swordhit2
+	sounds/swordhit3
+	sounds/swordhit4
+	sounds/swordhit5
+	sounds/swordhit6
+	sounds/swordhit7
+}
+sounds/swordhit1	sounds/entity/player/attack/sweep1.ogg
+sounds/swordhit2	sounds/entity/player/attack/sweep2.ogg
+sounds/swordhit3	sounds/entity/player/attack/sweep3.ogg
+sounds/swordhit4	sounds/entity/player/attack/sweep4.ogg
+sounds/swordhit5	sounds/entity/player/attack/sweep5.ogg
+sounds/swordhit6	sounds/entity/player/attack/sweep6.ogg
+sounds/swordhit7	sounds/entity/player/attack/sweep7.ogg

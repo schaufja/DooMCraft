@@ -1,0 +1,20 @@
+sounds/fuse		sounds/random/fuse.ogg
+$random sounds/tntplace
+{
+	sounds/tntplace1	sounds/dig/wet_grass1.ogg
+	sounds/tntplace2	sounds/dig/wet_grass2.ogg
+	sounds/tntplace3	sounds/dig/wet_grass3.ogg
+	sounds/tntplace4	sounds/dig/wet_grass4.ogg
+}
+
+$random sounds/explode
+{
+	sounds/explode1
+	sounds/explode2
+	sounds/explode3
+	sounds/explode4
+}
+sounds/explode1		sounds/random/explode1.ogg
+sounds/explode2		sounds/random/explode2.ogg
+sounds/explode3		sounds/random/explode3.ogg
+sounds/explode4		sounds/random/explode4.ogg

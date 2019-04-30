@@ -1,0 +1,76 @@
+class VoxelBoneGib : Actor
+{
+	Default
+	{
+	Height 8;
+	Radius 4;
+	Mass 100;
+	Gravity 0.5;
+	Projectile;
+	Decal "";
+	BounceType "Doom";
+	BounceFactor 0.7;
+	+USEBOUNCESTATE
+	-NOGRAVITY
+	-SKYEXPLODE
+	-BLOODSPLATTER
+	}
+}
+
+class VoxelSkull : Actor
+{
+	Default
+	{
+	Height 8;
+	Radius 4;
+	Mass 100;
+	Gravity 0.5;
+	Projectile;
+	Decal "";
+	BounceType "Doom";
+	BounceFactor 0.7;
+	+USEBOUNCESTATE
+	-NOGRAVITY
+	-SKYEXPLODE
+	-BLOODSPLATTER
+	}
+	States
+	{
+	Spawn:
+		FRAM ABCDEF 3; //A_SpawnItemEx("BloodDrop", 0, 0, 0, random(-2,2), random(-2,2), random(-2,2));
+		Loop;
+	Bounce:
+		FRAM A 0 A_SetAngle(random(-90.0,90.0),SPF_INTERPOLATE);
+		Goto Spawn;
+	Death:
+		FRAM A 600;
+	Fade:
+		FRAM A 3 A_FadeOut(0.1);
+		Loop;
+	}
+}
+
+class VoxelRBone : VoxelSkull
+{
+	
+}
+
+class VoxelLBone : VoxelSkull
+{
+	
+}
+
+class VoxelRib : VoxelSkull
+{
+	
+}
+
+class VoxelRibSingle : VoxelSkull
+{
+	
+}
+
+class VoxelPelvis : VoxelSkull
+{
+	
+}

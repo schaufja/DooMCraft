@@ -1,0 +1,11 @@
+Actor Oak_Tall 7101
+{
+	Radius 8
+	Height 96
+	States
+	{
+	Spawn:
+		FRAM A -1
+		stop
+	}
+}
